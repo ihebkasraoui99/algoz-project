@@ -162,8 +162,9 @@ def main(config: DictConfig):
     os.chdir(new_directory)
     configs, save_paths = initialization(config)
     datasets = get_datasets(configs, save_paths)
-
+    dagshub.init(repo_owner='ihebkasraoui99', repo_name='algoz-project', mlflow=True)
     mlflow.set_experiment(f'ALGOZ')
+    mlflow.set_tracking_uri("https://dagshub.com/ihebkasraoui99/algoz-project.mlflow")
     with mlflow.start_run() as run:
             algorithm = get_algorithm(configs, datasets, save_paths)
             mlflow.set_tag('algorithm', algorithm.model.module.__class__.__name__)

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/nanoz-admin/Documents/algoz_iheb/algoz-project/mlruns/816396851489568340/912fe08a81c942dda6525d2cab1b7ec9/artifacts
+end_time: 1721378023251
+entry_point_name: ''
+experiment_id: '816396851489568340'
+lifecycle_stage: active
+run_id: 912fe08a81c942dda6525d2cab1b7ec9
+run_name: invincible-mare-948
+run_uuid: 912fe08a81c942dda6525d2cab1b7ec9
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721377990520
+status: 3
+tags: []
+user_id: nanoz-admin

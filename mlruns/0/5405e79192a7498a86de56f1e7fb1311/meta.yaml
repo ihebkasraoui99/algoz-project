@@ -1,0 +1,15 @@
+artifact_uri: file:///home/nanoz-admin/Documents/algoz_iheb/algoz-project/mlruns/0/5405e79192a7498a86de56f1e7fb1311/artifacts
+end_time: 1721378412744
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 5405e79192a7498a86de56f1e7fb1311
+run_name: welcoming-frog-588
+run_uuid: 5405e79192a7498a86de56f1e7fb1311
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721378402363
+status: 4
+tags: []
+user_id: nanoz-admin
