@@ -13,8 +13,16 @@ pre_processing_train:
     percentage: 0
   - name: "LimitOfDetection"
     gases: ["FinalConcEtOH"]
-    lod: [0.5]
-
+    lod: [0.5]    
+  - name: "OrdinalEncoderFromInterval"
+    gases: ["FinalConcEtOH"]
+    intervals: 
+    - [-1, 10]
+    - [10, 20]
+    - [20, 30]
+    - [30, 50]
+    - [50, 100]
+    - [100, 120]
 transform_train:
   x:
     - name: "Transpose"

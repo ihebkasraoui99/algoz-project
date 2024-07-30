@@ -12,7 +12,6 @@ from dataclasses import dataclass
 
 from torch import cuda
 
-from nanoz.config import ALGOZ_PATH
 from nanoz.utils import assign_free_gpus
 
 

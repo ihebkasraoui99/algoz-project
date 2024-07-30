@@ -32,3 +32,4 @@ predict_nonlinearity: "auto"
 warm_start: false
 verbose: 1
 device: "cpu"
+classes: [0, 1, 2, 3, 4, 5]

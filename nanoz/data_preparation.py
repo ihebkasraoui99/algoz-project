@@ -389,10 +389,16 @@ class UnfoldClassificationDataset(UnfoldDataset):
         return sample["x"], sample["y"]
 
     def _get_classes(self):
-        if "pre_processing" in self.config_data:
-            for step in self.config_data["pre_processing"][::-1]:  # reverse order
-                if "OrdinalEncoderFromInterval" in step["name"]:  # TODO: generalize
-                    return step["intervals"]
+        if (self.mode=="train"):
+            if "pre_processing_train" in self.config_data:
+                for step in self.config_data["pre_processing_train"][::-1]:  # reverse order
+                    if "OrdinalEncoderFromInterval" in step["name"]:  # TODO: generalize
+                        return step["intervals"]
+        else: 
+            if "pre_processing_test" in self.config_data:
+                for step in self.config_data["pre_processing_test"][::-1]:  # reverse order
+                    if "OrdinalEncoderFromInterval" in step["name"]:  # TODO: generalize
+                        return step["intervals"]
         return []
 
     def prepare_torch_tensor(self):

@@ -379,7 +379,7 @@ class TrainAlgorithm(Algorithm):
    #     mlflow.set_experiment(f'ALGOZ')
      #   with mlflow.start_run() as run:
        #     mlflow.set_tag('algorithm', self.model.module.__class__.__name__)
-
+            print (datasets["train"])
             self.model.module.train()
             self.model.fit(datasets["train"], y=None)
        #     mlflow.log_params({'C': self.config.parameters["lr"], 'penalty': self.config.parameters["max_epochs"]})

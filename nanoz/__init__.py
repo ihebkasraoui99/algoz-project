@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from .config import *
 from .utils import *
 from .nzio import *
 from .data_preparation import *

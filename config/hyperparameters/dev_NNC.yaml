@@ -2,11 +2,12 @@ module: null
 criterion: "CrossEntropyLoss"
 optimizer: "Adam"
 lr: 0.001
-max_epochs: 3
+max_epochs: 2
 batch_size: 32
 iterator_train: "DataLoader"
 iterator_valid: "DataLoader"
 dataset: "Dataset"
+classes: [1,2,3,4]
 train_split:
   predefined_split:
     dataset: "test"

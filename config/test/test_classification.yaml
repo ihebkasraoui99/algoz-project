@@ -1,0 +1,29 @@
+data_paths_test:
+  - data: EtOH_DB_V3_2_random.csv
+
+chips_test: ["UUT1"]
+
+gases_test: ["FinalConcEtOH"]
+
+minibatch_size_test: 16
+minibatch_step_test: 1
+
+pre_processing_test:
+  - name: "SkipData"
+    percentage: 0
+
+  - name: "LimitOfDetection"
+    gases: ["FinalConcEtOH"]
+    lod: [0.5]    
+  - name: "OrdinalEncoderFromInterval"
+    gases: ["FinalConcEtOH"]
+    intervals: 
+    - [-1, 10]
+    - [10, 20]
+    - [20, 30]
+    - [30, 50]
+    - [50, 100]
+    - [100, 120]
+transform_test:
+  x:
+    - name: "Transpose"

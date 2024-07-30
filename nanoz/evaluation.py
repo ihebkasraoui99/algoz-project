@@ -182,7 +182,7 @@ class ClassificationEvaluator(Evaluator):
         roc_auc = {}
 
         classes = range(self.n_classes)
-        encoder = OneHotEncoder(categories=[classes], drop=None, sparse=False, dtype=int)
+        encoder = OneHotEncoder(categories=[classes], drop=None, sparse_output=False, dtype=int)
         onehot = encoder.fit_transform([[val] for val in self.ground_truth])
 
         for i in classes:
@@ -211,7 +211,7 @@ class ClassificationEvaluator(Evaluator):
         average_precision = {}
 
         classes = range(self.n_classes)
-        encoder = OneHotEncoder(categories=[classes], drop=None, sparse=False, dtype=int)
+        encoder = OneHotEncoder(categories=[classes], drop=None, sparse_output=False, dtype=int)
         onehot = encoder.fit_transform([[val] for val in self.ground_truth])
 
         for i in classes:

@@ -1,0 +1,2 @@
+- hyperparameters.criterion=MAELoss
+- hyperparameters.criterion=MSELoss

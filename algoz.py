@@ -11,7 +11,6 @@ from omegaconf import DictConfig
 import mlflow 
 import dagshub
 
-from nanoz.config import ALGOZ_PATH
 from nanoz.utils import timing, version
 from nanoz.nzio import ConfigFactory, configure_logger
 from nanoz.data_preparation import DatasetFactory
@@ -158,13 +157,14 @@ def save_results(configs, algorithm, datasets, save_paths):
 @timing
 @hydra.main(config_path="config", config_name="config")
 def main(config: DictConfig):
-    new_directory = ALGOZ_PATH  
-    os.chdir(new_directory)
+    orig_cwd = hydra.utils.get_original_cwd()
+    print(orig_cwd)
+    os.chdir(orig_cwd)
     configs, save_paths = initialization(config)
     datasets = get_datasets(configs, save_paths)
     dagshub.init(repo_owner='ihebkasraoui99', repo_name='algoz-project', mlflow=True)
     mlflow.set_experiment(f'ALGOZ')
-    mlflow.set_tracking_uri("https://dagshub.com/ihebkasraoui99/algoz-project.mlflow")
+  #  mlflow.set_tracking_uri("https://dagshub.com/ihebkasraoui99/algoz-project.mlflow")
     with mlflow.start_run() as run:
             algorithm = get_algorithm(configs, datasets, save_paths)
             mlflow.set_tag('algorithm', algorithm.model.module.__class__.__name__)

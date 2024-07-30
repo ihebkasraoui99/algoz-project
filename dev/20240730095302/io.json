@@ -1,0 +1,24 @@
+defaults:
+  - _self_
+  - train: train_classification
+  - test: test_classification
+  - hyperparameters: dev_NNC
+  - module: dev_CNN1D_classification
+output_path: "./dev/"
+algorithm: "NNR"
+modules: "CNN1D"
+mode: train
+performance_intervals:
+  - [-1, 10]
+  - [10, 20]
+  - [20, 30]
+  - [30, 50]
+  - [50, 100]
+  - [100, 120]
+
+paths:
+  base_path: "/config"
+  data_train: "train/train_classification.yaml"
+  data_test: "test/test_classification.yaml"
+  hyperparameters: "hyperparameters/dev/hyperparameters.yaml"
+  module: "module/dev/module.yaml"
